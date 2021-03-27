@@ -1,0 +1,60 @@
+.authentication__container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.authentication__form-container {
+  width: 90vw;
+
+  .authentication__logo {
+    display: block;
+    margin: 0 auto 3em auto;
+  }
+  form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .authentication__form-control {
+      margin-bottom: 1.5em;
+      position: relative;
+      width: 100%;
+      label {
+        background: linear-gradient(to top, $light-gray 60%, transparent);
+        font-size: 1.2em;
+        font-weight: 700;
+        left: 1em;
+        letter-spacing: 0.1em;
+        padding: 0 0.5em;
+        position: absolute;
+        top: -0.5em;
+      }
+      input {
+        background-color: $light-gray;
+        border: 3px solid black;
+        font-size: 1em;
+        letter-spacing: 0.1em;
+        outline: none;
+        padding: 0.7em;
+        width: 100%;
+      }
+      small {
+        color: $red;
+        display: block;
+        font-size: 0.9em;
+        margin-top: 0.3em;
+      }
+    }
+  }
+  .authentication__o {
+    margin: 0.5em 0;
+  }
+}
+
+@media only screen and (min-width: 56em) {
+  .authentication__form-container {
+    width: 40vw;
+  }
+}

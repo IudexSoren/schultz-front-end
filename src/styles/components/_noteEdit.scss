@@ -1,0 +1,252 @@
+.noteedit__main {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 2fr auto;
+}
+
+.noteedit__edit-area,
+.noteedit_button-container {
+    margin: 0 40px 40px;
+}
+
+.noteedit__edit-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    overflow-y: auto;
+    .noteedit__delete-image {
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+    }
+    .noteedit__image-container {
+        background: $light-gray;
+        border: 2px solid $dark-gray;
+        height: 7em;
+        margin-bottom: 1em;
+        position: relative;
+        width: 7em;
+        .noteedit__image-task {
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            width: 100%;
+            z-index: 99;
+        }
+        .noteedit__delete-image {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            z-index: 101;
+        }
+        .noteedit__file {
+            cursor: pointer;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+    }
+    .noteedit__options-container {
+        width: 100%;
+        .noteedit__input-container {
+            label {
+                display: block;
+                font-size: 1.5em;
+                width: 100%;
+            }
+            input {
+                border: none;
+                border-bottom: 1px solid $dark-gray;
+                color: $dark-gray;
+                font-size: 1em;
+                margin-bottom: 0.3em;
+                outline: none;
+                padding: 5px 0;
+                width: 100%;
+            }
+            small {
+                color: $red;
+                font-size: 1em;
+            }
+        }
+        .noteedit__options-secondary {
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .noteedit__audio-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1em;
+            width: 100%;
+            .noteedit_audio-icon-container {
+                display: flex;
+                .noteedit__delete-image {
+                    margin: auto;
+                }
+            }
+            .noteedit__audio-icon {
+                align-items: center;
+                background-color: $dark-gray;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                height: 40px;
+                justify-content: center;
+                width: 40px;
+                img {
+                    height: 32px;
+                    width: 32px;
+                }
+            }
+            audio {
+                flex-grow: 2;
+                margin-left: 0.5em;
+                outline: none;
+                filter: drop-shadow(0px 5px 5px $medium-gray)
+            }
+        }
+        .noteedit__radio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 1em;
+            width: 100%;
+            .noteedit__radio {
+                align-items: center;
+                display: flex;
+                height: 40px;
+                margin-bottom: 0.3em;
+                input {
+                    margin-right: 0.3em;
+                }
+                span {
+                    font-size: 1.2em;
+                }
+            }
+            .noteedit__date {
+                border: 2px solid $dark-gray;
+                font-size: 1em;
+                outline: none;
+                padding: 5px;
+                width: 100%;
+            }
+            p {
+                width: 100%;
+            }
+        }
+    }
+    .noteedit__textarea-container {
+        margin-top: 2em;
+        width: 100%;
+        label {
+            display: block;
+            font-size: 1.5em;
+            width: 100%;
+        }
+        textarea {
+            border: 2px solid $dark-gray;
+            font-size: 1em;
+            height: 10em;
+            outline: none;
+            padding: 10px;
+            width: 100% !important;
+        }
+    }
+}
+
+.noteedit_button-container {
+    display: flex;
+    justify-content: space-between;
+    img {
+        height: 32px;
+        width: 32px;
+    }
+    .noteedit__buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 5em;
+    }
+    .btn {
+        .noteedit__whiteImg {
+            display: none;
+        }
+        span {
+            display: none;
+        }
+    }
+}
+
+@media only screen and(max-width: 80em) {
+    .noteedit_button-container {
+        .btn {
+            background: none;
+            border: none;
+            padding: unset;
+        }
+    }
+}
+
+@media only screen and (min-width: 80em) {
+    .noteedit__edit-area {
+        align-content: flex-start;
+        justify-content: space-around;
+        .noteedit__image-container {
+            height: 12em;
+            width: 12em;
+        }
+        .noteedit__options-container {
+            width: 75%;
+        }
+        .noteedit__options-secondary {
+            width: 100%;
+        }
+        .noteedit__textarea-container {
+            height: 60%;
+            textarea {
+                height: 100%;
+            }
+        }
+    }
+    .noteedit_button-container {
+        .btn:first-of-type {
+            img:nth-of-type(2) {
+                display: flex;
+            }
+            img:first-of-type {
+                display: none;
+            }
+        }
+        .btn {
+            span {
+                display: flex;
+            }
+        }
+        .noteedit__buttons {
+            width: 20em;
+            img:first-of-type {
+                display: flex !important;
+            }
+            img:nth-of-type(2) {
+                display: none !important;
+            }
+            .btn {
+                &:hover {
+                    img:first-of-type {
+                        display: none !important;
+                    }
+                    img:nth-of-type(2) {
+                        display: flex !important;
+                    }
+                }
+            }
+        }
+    }
+}

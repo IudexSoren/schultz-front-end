@@ -1,0 +1,7 @@
+@media only screen and (min-width: 56em) {
+  .workarea__container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    position: relative;
+  }
+}
